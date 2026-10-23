@@ -117,38 +117,25 @@ def main():
     sep2   = "-" * 55
     exam_n = " + exam tomorrow!" if exam else ""
 
-    output = "\n".join([
-        "",
+    lines = [
         sep,
-        "  STUDENT SURVIVAL REPORT",
-        "  Saskatchewan Polytechnic  |  Code Engine Lab",
+        "STUDENT SURVIVAL REPORT | Saskatchewan Polytechnic | Code Engine Lab",
         sep,
-        "",
-        "  Student      : " + name,
-        "  Status       : " + status,
-        "",
-        "  SURVIVAL RATE",
-        "  " + sep2,
-        "  " + bar,
-        "",
-        '  "' + msg + '"',
-        "",
-        "  BREAKDOWN",
-        "  " + sep2,
-        "  Sleep         : " + str(int(s_sleep))    + "/100   (" + str(sleep)  + "h slept)",
-        "  Caffeine      : " + str(int(s_coffee))   + "/100   (" + str(int(coffee)) + " cups)",
-        "  Academic Load : " + str(int(s_pressure)) + "/100   (" + str(int(assign)) + " assignments" + exam_n + ")",
-        "  Touch Grass   : " + str(int(s_outside))  + "/100   (" + str(int(out))    + " day(s) inside)",
-        "  Nutrition     : " + str(int(s_meal))     + "/100   (" + str(meal)   + "h since last meal)",
-        "",
-        "  " + sep2,
-        "  Disclaimer: Not responsible for failed exams or",
-        "  existential crises. Drink water.",
+        "Student: " + name + " | Status: " + status,
+        "Survival Rate: " + bar,
+        '"' + msg + '"',
+        sep2,
+        "Sleep: "         + str(int(s_sleep))    + "/100 (" + str(sleep)        + "h slept) | "
+        "Caffeine: "      + str(int(s_coffee))   + "/100 (" + str(int(coffee))  + " cups) | "
+        "Academic Load: " + str(int(s_pressure)) + "/100 (" + str(int(assign))  + " assignments" + exam_n + ") | "
+        "Touch Grass: "   + str(int(s_outside))  + "/100 (" + str(int(out))     + " day(s) inside) | "
+        "Nutrition: "     + str(int(s_meal))     + "/100 (" + str(meal)         + "h since last meal)",
         sep,
-        "",
-    ])
+        "Disclaimer: Not responsible for failed exams or existential crises. Drink water.",
+        sep,
+    ]
 
-    print(output)
+    print(" || ".join(lines))
 
 
 if __name__ == "__main__":
